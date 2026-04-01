@@ -12,6 +12,8 @@ function App() {
 
   const price = 1000;
   const quantity =3;
+  
+  const isOpen = true;
   return (
     <>
       <section id="center">
@@ -23,6 +25,7 @@ function App() {
         <div>
           <h1>最新のreactアプリ</h1>
           {/* コメントの書き方 */}
+          <p>{isOpen ? '営業中' : '閉店'}</p>
           <p>名前：{userName}</p>
           <p>年齢：{age}歳</p>
           <p>価格：{price}円</p>
