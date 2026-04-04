@@ -4,9 +4,32 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+
+function Profile ({name, age, isStudent, hometown,children}) {
+  return (
+    <>
+    {/* <h2>{props.name}</h2>
+    <p>年齢：{props.age}</p>
+    <p>{props.isStudent ? '学生' : '社会人'}</p> */}
+    <h2>{name}</h2>
+    <p>年齢：{age}</p>
+    <p>{isStudent ? '学生' : '社会人'}</p>
+    <p>出身地：{hometown}</p>
+    {children}
+    </>
+  );}
 function App() {
+
+
+  
   const [count, setCount] = useState(0)
 
+  
+  
+  const isGreen = true;
+  
+  
+  
   const userName ='田中太郎';
   const age = 30;
 
@@ -24,26 +47,33 @@ function App() {
         </div>
         <div>
           <h1>最新のreactアプリ</h1>
+          <Profile name="田中太郎" age={20} isStudent={true} hometown="東京">
+          <p>趣味：プログラミング</p>
+          </Profile>
+          <Profile name="山本" age={30} isStudent={false} hometown="京都">
+          <p>職業：デザイナー</p>
+          </Profile>
+          <Profile name="佐藤" age={40} isStudent={false} hometown="大阪"/>
+          {/* <Profile name="佐藤" age={40} isStudent={false} hometown="大阪"/> */}
+
+          {/* <p className={isGreen ? 'green' : 'red'}>サンプルテキスト</p> */}
           {/* コメントの書き方 */}
-          <p>{isOpen ? '営業中' : '閉店'}</p>
+          {/* <p>{isOpen ? '営業中' : '閉店'}</p>
           <p>名前：{userName}</p>
           <p>年齢：{age}歳</p>
           <p>価格：{price}円</p>
           <p>税込価格：{price * 1.5}円</p>
-          <p>数量：{quantity}個</p>
-          <h1 className="title">タイトル</h1>
+          <p>数量：{quantity}個</p> */}
+          {/* <h1 className="title">タイトル</h1>
           <label htmlFor="name">名前：</label>
-          <input id="name" type="text" placeholder="あなたの名前を入力してください" />
+          <input id="name" type="text" placeholder="あなたの名前を入力してください" /> */}
         </div>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-        </p>
-        <button
+        {/* <button
           className="counter"
           onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
-        </button>
+        </button> */}
       </section>
 
       <div className="ticks"></div>
@@ -131,7 +161,6 @@ function App() {
 
       <div className="ticks"></div>
       <section id="spacer"></section>
-      <h1>タイトル</h1>
     </>
     
     

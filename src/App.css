@@ -182,3 +182,12 @@
     border-right-color: var(--border);
   }
 }
+
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
