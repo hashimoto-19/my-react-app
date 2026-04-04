@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from './assets/vite.svg'
+// import heroImg from './assets/hero.png'
 import './App.css'
 
 
@@ -18,33 +18,47 @@ function Profile ({name, age, isStudent, hometown,children}) {
     {children}
     </>
   );}
-function App() {
 
+function Counter({initialValue, maxValue}) {
+  const [count, setCount] = useState(initialValue);
 
-  
-  const [count, setCount] = useState(0)
-
-  
-  
-  const isGreen = true;
-  
-  
-  
-  const userName ='田中太郎';
-  const age = 30;
-
-  const price = 1000;
-  const quantity =3;
-  
-  const isOpen = true;
+  const increment = () => {
+    if (count < maxValue) {
+      setCount(count + 1)
+    }
+  };
   return (
     <>
+      <p>カウント:{count} / {maxValue}</p>
+      <button onClick={increment}>カウントあっぷ</button>
+      {/* <p>現在のカウント：{count}</p>
+      <button onClick={() => setCount(count + 1)}>カウントアップ</button> */}
+    </>
+  )
+}
+
+function App() {
+  const [showMessage, setShowMessage] = useState(false);
+  const handleClick = () => {
+    setShowMessage(true);
+  };
+  // const [count, setCount] = useState(0)
+  // const isGreen = true;
+  
+  // const userName ='田中太郎';
+  // const age = 30;
+
+  // const price = 1000;
+  // const quantity =3;
+  
+  // const isOpen = true;
+  return (
+    <>
+    <button onClick={handleClick}>メッセージを表示</button>
+    {}{showMessage && <p>こんにちは！これはメッセージです。</p>}
+    <Counter initialValue={10} maxValue={20} />
+    <Counter initialValue={0} maxValue={5} />
       <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
         <div>
           <h1>最新のreactアプリ</h1>
           <Profile name="田中太郎" age={20} isStudent={true} hometown="東京">
@@ -75,7 +89,7 @@ function App() {
           Count is {count}
         </button> */}
       </section>
-
+{/* 
       <div className="ticks"></div>
 
       <section id="next-steps">
@@ -160,7 +174,7 @@ function App() {
       </section>
 
       <div className="ticks"></div>
-      <section id="spacer"></section>
+      <section id="spacer"></section> */}
     </>
     
     
