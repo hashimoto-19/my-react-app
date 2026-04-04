@@ -38,10 +38,11 @@ function Counter({initialValue, maxValue}) {
 }
 
 function App() {
-  const [showMessage, setShowMessage] = useState(false);
-  const handleClick = () => {
-    setShowMessage(true);
-  };
+  const [text, setText] = useState('');
+  // const [showMessage, setShowMessage] = useState(false);
+  // const handleClick = () => {
+  //   setShowMessage(true);
+  // };
   // const [count, setCount] = useState(0)
   // const isGreen = true;
   
@@ -54,8 +55,14 @@ function App() {
   // const isOpen = true;
   return (
     <>
-    <button onClick={handleClick}>メッセージを表示</button>
-    {}{showMessage && <p>こんにちは！これはメッセージです。</p>}
+    <input type="text" 
+    value={text}
+    onChange={(e) => setText(e.target.value)}
+    placeholder='テキストを入力してください'
+    />
+    <p>入力：{text}</p>
+    {/* <button onClick={handleClick}>メッセージを表示</button>
+    {}{showMessage && <p>こんにちは！これはメッセージです。</p>} */}
     <Counter initialValue={10} maxValue={20} />
     <Counter initialValue={0} maxValue={5} />
       <section id="center">
